@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "module": "es2015",
+    "esModuleInterop": true,
+    "target": "es6",
+    "moduleResolution": "node",
+    "outDir": ".",
+    "sourceMap": true,
+    "baseUrl": ".",
+    "lib": [
+      "es2016",
+      "dom"
+    ]
+  },
+  "files": [
+    "test.ts"
+  ]
+}
