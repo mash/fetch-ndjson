@@ -7,7 +7,7 @@ import ndjson from '../src/index';
   let gen = ndjson(reader);
   while (true) {
     let { done, value } = await gen.next();
-    console.log(`done=${done}, value=${value}`);
+    console.log(`done=${done}, value=${JSON.stringify(value)}`);
     if (done) {
       return;
     }
