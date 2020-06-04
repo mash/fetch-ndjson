@@ -2,10 +2,10 @@
 
 // reader comes from:
 // fetch('/api').then(response => response.body.getReader())
-export default async function* gen(reader :ReadableStreamDefaultReader) :AsyncGenerator<any, string> {
+export default async function* gen(reader: ReadableStreamDefaultReader): AsyncGenerator<any, string> {
   const matcher = /\r?\n/;
   const decoder = new TextDecoder();
-  let buf = "";
+  let buf = '';
 
   let next = reader.read();
   while (true) {
@@ -18,7 +18,7 @@ export default async function* gen(reader :ReadableStreamDefaultReader) :AsyncGe
       return;
     }
 
-    const chunk = decoder.decode(value, {stream: true});
+    const chunk = decoder.decode(value, { stream: true });
     // debug(`chunk=${chunk}`);
     buf += chunk;
 
