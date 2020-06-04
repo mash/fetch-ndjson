@@ -14,9 +14,9 @@
     "test-client-watch": "cd test && webpack -w"
   },
   "author": {
-    "name" : "Masakazu Ohtsuka",
-    "email" : "o.masakazu@gmail.com",
-    "url" : "https://github.com/mash/"
+    "name": "Masakazu Ohtsuka",
+    "email": "o.masakazu@gmail.com",
+    "url": "https://github.com/mash/"
   },
   "license": "MIT",
   "devDependencies": {
