@@ -1,4 +1,4 @@
-const debug = console.log;
+// const debug = console.log;
 
 // reader comes from:
 // fetch('/api').then(response => response.body.getReader())
@@ -9,7 +9,7 @@ export default async function* gen(reader :ReadableStreamDefaultReader) :AsyncGe
 
   let next = reader.read();
   while (true) {
-    let { done, value } = await next;
+    const { done, value } = await next;
 
     if (done) {
       if (buf.length > 0) {
@@ -18,14 +18,14 @@ export default async function* gen(reader :ReadableStreamDefaultReader) :AsyncGe
       return;
     }
 
-    let chunk = decoder.decode(value, {stream: true});
-    debug(`chunk=${chunk}`);
+    const chunk = decoder.decode(value, {stream: true});
+    // debug(`chunk=${chunk}`);
     buf += chunk;
 
     const parts = buf.split(matcher);
     buf = parts.pop();
-    for (let i = 0; i < parts.length; i++) {
-      yield JSON.parse(parts[i]);
+    for (const i of parts) {
+      yield JSON.parse(i);
     }
 
     next = reader.read();
