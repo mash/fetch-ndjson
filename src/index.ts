@@ -12,7 +12,10 @@ export default async function* gen(reader :ReadableStreamDefaultReader) :AsyncGe
     let { done, value } = await next;
 
     if (done) {
-      return "done";
+      if (buf.length > 0) {
+        yield JSON.parse(buf);
+      }
+      return;
     }
 
     let chunk = decoder.decode(value, {stream: true});
