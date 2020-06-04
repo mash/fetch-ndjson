@@ -1,7 +1,7 @@
 {
   "name": "fetch-ndjson",
   "version": "1.0.0",
-  "description": "",
+  "description": "fetch-ndjson turns new line delimited JSON streaming responses retrieved using Fetch API into Generators that yield JSON",
   "main": "dist/index.js",
   "scripts": {
     "build": "npm-run-all build-ts lint",
@@ -13,7 +13,11 @@
     "test-client-build": "cd test && webpack",
     "test-client-watch": "cd test && webpack -w"
   },
-  "author": "",
+  "author": {
+    "name" : "Masakazu Ohtsuka",
+    "email" : "o.masakazu@gmail.com",
+    "url" : "https://github.com/mash/"
+  },
   "license": "MIT",
   "devDependencies": {
     "@types/tape": "^4.13.0",
