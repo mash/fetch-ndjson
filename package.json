@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "npm-run-all build-ts lint",
-    "build-ts": "tsc",
+    "build-ts": "tsc --declaration",
     "lint": "npx --no-install tslint --fix --project tsconfig.json",
     "format": "prettier --write \"src/*.ts\" \"test/*.js\" \"test/*.ts\"",
     "test": "npm-run-all build-ts lint test-client-build test-runner",
