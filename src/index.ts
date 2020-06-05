@@ -2,7 +2,7 @@
 
 // reader comes from:
 // fetch('/api').then(response => response.body.getReader())
-export default async function* gen(reader: ReadableStreamDefaultReader): AsyncGenerator<any, string> {
+export default async function* gen(reader: ReadableStreamDefaultReader): AsyncGenerator<any, void> {
   const matcher = /\r?\n/;
   const decoder = new TextDecoder();
   let buf = '';
