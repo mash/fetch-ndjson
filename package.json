@@ -1,6 +1,6 @@
 {
   "name": "fetch-ndjson",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "fetch-ndjson turns new line delimited JSON streaming responses retrieved using Fetch API into Generators that yield JSON",
   "main": "dist/index.js",
   "scripts": {
