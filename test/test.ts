@@ -5,8 +5,7 @@ async function runtest(pathname) {
   let res = await fetch(pathname);
 
   // ndjson user should take care of unexpected responses
-  if ((res.headers.get('Content-Type') !== 'application/x-ndjson') ||
-      (res.status !== 200)) {
+  if (res.headers.get('Content-Type') !== 'application/x-ndjson' || res.status !== 200) {
     console.log(`Content-Type=${res.headers.get('Content-Type')}`);
     console.log(`res.status=${res.status}`);
     return;

@@ -42,9 +42,9 @@ const tests = [
       'pathname=/500',
       'Failed to load resource: the server responded with a status of 500 (Internal Server Error)',
       'Content-Type=application/json',
-      'res.status=500'
+      'res.status=500',
     ],
-  } 
+  },
 ];
 
 const testserver = require('./server');
