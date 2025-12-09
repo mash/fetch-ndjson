@@ -32,6 +32,25 @@ const tests = [
     ],
   },
   {
+    pathname: '/api3',
+    handler: (res) => {
+      res.writeHead(200, { 'Content-Type': 'application/x-ndjson' });
+      res.write(`{"a":1}\n`);
+      res.write(`\n`);
+      res.write(`{"b":2}\n`);
+      res.write(` \n`);
+      res.write(`{"c":3}\n`);
+      res.end();
+    },
+    expected: [
+      'pathname=/api3',
+      'done=false, value={"a":1}',
+      'done=false, value={"b":2}',
+      'done=false, value={"c":3}',
+      'done=true, value=undefined',
+    ],
+  },
+  {
     pathname: '/500',
     handler: (res) => {
       res.writeHead(500, { 'Content-Type': 'application/json' });

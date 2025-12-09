@@ -25,7 +25,9 @@ export default async function* gen(reader: ReadableStreamDefaultReader): AsyncGe
     const parts = buf.split(matcher);
     buf = parts.pop();
     for (const i of parts) {
-      yield JSON.parse(i);
+      if (!i.match(/^\s*$/)) {
+        yield JSON.parse(i);
+      }
     }
 
     next = reader.read();
